@@ -1,16 +1,28 @@
 <template>
-  <form @submit.prevent="handleSubmit">
-    <input v-model="task.title" placeholder="Title" required />
-    <input v-model="task.description" placeholder="Description" />
-  
-    <select v-model="task.status" required >
-  <option value="Low">Low</option>
-  <option value="Med">Med</option>
-  <option value="High">High</option>
+  <form @submit.prevent="handleSubmit" class="task-form">
+    <h2>{{ editMode ? 'Edit Task' : 'Add New Task' }}</h2>
+    
+    <div class="form-group">
+      <label for="taskTitle">Task Title:</label>
+      <input id="taskTitle" v-model="task.title" placeholder="Enter task title" required />
+    </div>
+    
+    <div class="form-group">
+      <label for="taskDescription">Description:</label>
+      <textarea id="taskDescription" v-model="task.description" placeholder="Enter task description"></textarea>
+    </div>
 
-</select>
+    <div class="form-group">
+      <label for="taskStatus">Status:</label>
+      <select id="taskStatus" v-model="task.status" required>
+        <option value="" disabled>Select status</option>
+        <option value="Low">Low</option>
+        <option value="Med">Medium</option>
+        <option value="High">High</option>
+      </select>
+    </div>
 
-    <button type="submit">{{ editMode ? 'Update' : 'Add' }} Task</button>
+    <button type="submit" class="submit-button">{{ editMode ? 'Update' : 'Add' }} Task</button>
   </form>
 </template>
 
@@ -21,8 +33,8 @@ export default {
       task: {
         title: '',
         description: '',
-        status:'',
-        created_date:Date.now()
+        status: '',
+        created_date: Date.now()
       },
       editMode: false
     };
@@ -49,3 +61,79 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.task-form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+}
+
+
+@media (max-width: 500px) {
+  .task-form {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  input, textarea, select {
+    font-size: 14px;
+  }
+
+  .submit-button {
+    font-size: 14px;
+  }
+}
+</style>
