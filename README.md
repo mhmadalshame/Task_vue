@@ -1,5 +1,3 @@
-# Vue 3 + Vite
-
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+Task management project using Vue A project that contains a single page containing a place to add a task where we add the title and description (optional) and the status of the task (low, medium, high) followed by a list of existing tasks with the time of its creation. The task can be deleted and modified. The modification is in the same place as the addition. To implement the project, we open the task manager where the project is located and write the command:"npm run dev"
+After execution, the project link will appear. Copy and paste it into the browser.
+Note: npm must be installed on the device.
