@@ -3,8 +3,8 @@ let id=1
 export default createStore({
   state: {
     tasks: [
-      { id: id++, title: 'Task 1', description: 'Description 1',status:'High',created_date:Date.now() },
-      { id: id++, title: 'Task 2', description: 'Description 2',status:'Low',created_date:Date.now()  },
+      { id: id++, title: 'Task 1', description: 'Description 1',status:'completed',created_date:Date.now() },
+      { id: id++, title: 'Task 2', description: 'Description 2',status:'pending',created_date:Date.now()  },
     ]
   },
   mutations: {
