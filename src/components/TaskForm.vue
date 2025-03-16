@@ -16,9 +16,9 @@
       <label for="taskStatus">Status:</label>
       <select id="taskStatus" v-model="task.status" required>
         <option value="" disabled>Select status</option>
-        <option value="Low">Low</option>
-        <option value="Med">Medium</option>
-        <option value="High">High</option>
+        <option value="pending">pending</option>
+        <option value="in progress">in progress</option>
+        <option value="completed">completed</option>
       </select>
     </div>
 
