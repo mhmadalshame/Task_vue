@@ -15,7 +15,7 @@ This is a single-page application (SPA) for managing tasks, developed using Vue.
 - Delete tasks with a confirmation mechanism.
 - Responsive design for mobile devices.
 - Form validation to ensure required fields are filled correctly.
-- (Optional) User authentication simulation, sorting, and filtering features.
+
 
 ## Project Setup
 
