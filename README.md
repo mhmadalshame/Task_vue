@@ -1,5 +1,3 @@
-إليك محتوى ملف README.md لمشروع إدارة المهام باستخدام Vue.js:
-
 
 # Task Management Application
 
